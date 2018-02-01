@@ -1,0 +1,8 @@
+Frank 33
+George 34
+Mary 11
+Paul 14
+Samuel 23
+Susan 34
+Timothy 45
+Tom 23

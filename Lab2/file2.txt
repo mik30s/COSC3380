@@ -1,0 +1,6 @@
+Paul 12
+Jane 134
+Helen 32
+Jim 56
+John 34
+Henry 34 
