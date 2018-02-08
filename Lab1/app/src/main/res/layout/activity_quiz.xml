@@ -16,7 +16,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/question_text"
+            android:text=""
             android:padding="24dp"/>
 
         <LinearLayout
@@ -38,5 +38,11 @@
                 android:layout_weight="1"
                 android:text="@string/false_button" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
