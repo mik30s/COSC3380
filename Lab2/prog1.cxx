@@ -2,11 +2,14 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <string>
 
-int main() {
+
+int main(int argc, char** argv) {
     std::cout << "Running prog1\n";
-    std::ifstream in("file1.txt");
-    std::ofstream on("temp.txt");
+    std::ifstream in(argv[1]);
+	std::cout << "executing "<< argv[1] << '\n';
+    std::ofstream on("C:\\Users\\mike168m\\Documents\\COSC3380\\lab2\\temp.txt");
     char c;
     std::string line;
     std::vector<std::string> lines;
@@ -16,6 +19,6 @@ int main() {
     }
     std::sort(lines.begin(), lines.end());
     for (auto l: lines) {
-        on << l + '\n';
+        on << l << '\n';
     }
 }

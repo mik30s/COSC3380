@@ -2,9 +2,10 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 int main() {
-    std::ifstream in("temp.txt");
+    std::ifstream in("C:\\Users\\mike168m\\Documents\\COSC3380\\lab2\\temp.txt");
     std::string line, name;
     int age;
     std::vector<std::string> lines;
@@ -18,6 +19,6 @@ int main() {
             return std::stoi(std::string(s, s.size() - 3, 2)) < 20;
         });
     for(auto s : lines)  {
-        std::cout << s << '\n';
+	    std::cout << s << '\n';
     }
 }

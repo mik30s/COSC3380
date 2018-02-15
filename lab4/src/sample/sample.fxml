@@ -1,0 +1,32 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <VBox>
+        <HBox>
+            <Label minWidth="100" text="Batch File"></Label>
+            <TextField fx:id="batchFileTxt"></TextField>
+        </HBox>
+        <Separator></Separator>
+        <HBox>
+            <Label minWidth="100" text="Input"></Label>
+            <TextField fx:id="inputTxt"></TextField>
+        </HBox>
+        <Separator></Separator>
+        <HBox>
+            <Label minWidth="100" text="Output"></Label>
+            <TextField fx:id="outputTxt"></TextField>
+        </HBox>
+        <HBox>
+            <Button fx:id="executeBtn" onAction="#execute">Execute</Button>
+            <Button fx:id="editBtn" onAction="#edit">Edit</Button>
+        </HBox>
+    </VBox>
+</GridPane>

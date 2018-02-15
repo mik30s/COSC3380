@@ -1,0 +1,13 @@
+
+C:\Users\mike168m\Documents\COSC3380\lab4>echo off 
+Running prog1
+executing C:\Users\mike168m\Documents\COSC3380\lab2\file1.txt
+Running prog2
+Frank 33
+George 34
+Mary 11
+Paul 14
+Samuel 23
+Susan 34
+Timothy 45
+Tom 23
