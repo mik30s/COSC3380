@@ -11,8 +11,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class Lab5 implements Callable<String> {
-    static int value;
-    int increment;
+    static volatile int value;
+    volatile int increment;
     
     public Lab5(int v){
         increment = v;
@@ -20,12 +20,10 @@ public class Lab5 implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        Thread.sleep(1000);
-        // increment value
-        value += increment;
-        // 
-        //return the thread name executing this callable task
-        return ""+value;
+        synchronized(this) {
+            value += increment;
+            return ""+value;
+        }
     }
     
     public static void main(String args[]){
@@ -54,6 +52,7 @@ public class Lab5 implements Callable<String> {
         }
         //shut down the executor service now
         executor.shutdown();
+        System.out.println("Final value: "+ value);
     }
 
 }
