@@ -12,17 +12,20 @@ import java.util.concurrent.Future;
 
 public class Lab5 implements Callable<String> {
     static volatile int value;
-    volatile int increment;
+    int increment;
     
     public Lab5(int v){
         increment = v;
     }
 
     @Override
-    public String call() throws Exception {
-        synchronized(this) {
+    public String call() throws Exception { 
+        synchronized(Lab5.class){
+            Thread.sleep(1000);
+            int old = value;
             value += increment;
-            return ""+value;
+            return Thread.currentThread() + " old: " + old + "  increment: " + increment +
+                    "  value: " + value;
         }
     }
     
@@ -32,7 +35,7 @@ public class Lab5 implements Callable<String> {
         //create a list to hold the Future object associated with Callable
         List<Future<String>> list = new ArrayList<Future<String>>();
         
-        List<Integer> ints = Arrays.asList(5,3,-4, 6, 2);
+        List<Integer> ints = Arrays.asList(5,3,-4, 6, -2);
         
         for(int v : ints){
             //submit Callable tasks to be executed by thread pool
@@ -54,5 +57,4 @@ public class Lab5 implements Callable<String> {
         executor.shutdown();
         System.out.println("Final value: "+ value);
     }
-
 }
