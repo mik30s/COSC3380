@@ -21,14 +21,10 @@ public class Lab8 {
 
         long bufferSize=8*1000;
         MappedByteBuffer mem =fc.map(FileChannel.MapMode.READ_WRITE, 0, bufferSize);
-
-        int start = 0;
-        long counter=1;
-        long HUNDREDK=100000;
-        long noOfMessage = HUNDREDK * 10 * 10; 
     
-        while(true) {         
-            mem.put(Charset.forName(System.getProperty("file.encoding")).encode("s"));
+        while(true) { 
+            System.out.println("Writing data...");
+            mem.put(Charset.forName(System.getProperty("file.encoding")).encode("hello world\n"));
             Thread.sleep(2000);
         }
     }
